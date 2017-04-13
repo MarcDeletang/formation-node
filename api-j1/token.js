@@ -10,6 +10,8 @@ module.exports.init = function(app){
   //Rajouter les middlewares qui vont vérifier si le token a été envoyé avec req.query.token
   //Si le token est valide, mettre le payload to token dans req.token et passer au middleware suivant
   app.use('/item', (req, res, next)=>{
+    console.log(req.query.token)
+    next()
     //Verify & decline | allow
   })
 
