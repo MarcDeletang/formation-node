@@ -25,6 +25,7 @@ module.exports.init = function (app) {
   console.log('Init api !')
 
   app.get('/item', function (req, res) {
+    console.log(req.param('lol'))
     //Object retourne un tableau contenant les clefs de l'objet items: cad les ids de notre base
     //On applique reduce sur ces clefs afin formatter le tableau qui va être retourné(acc)
     //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys
