@@ -25,17 +25,12 @@ module.exports.init = function (app) {
   console.log('Init api !')
 
   app.get('/item', function (req, res) {
-    console.log(req.param('lol'))
+    console.log('Token payload', req.tokenData)
     //Object retourne un tableau contenant les clefs de l'objet items: cad les ids de notre base
     //On applique reduce sur ces clefs afin formatter le tableau qui va être retourné(acc)
     //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys
     //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/reduce
     const idsAsArray = Object.keys(items)
-    console.log(idsAsArray)
-    console.log('--------------------------')
-    idsAsArray.forEach(id => {
-      console.log('id', id, 'data', items[id])
-    })
     const itemsArray = idsAsArray.reduce(function (acc, key) {
       //Ici on récupere l'item correspondant à la clée key
       const item = items[key]
